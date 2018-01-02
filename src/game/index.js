@@ -50,7 +50,6 @@ class Game {
 
     render(){
         game.debug.body(ground);
-        game.debug.bodyInfo(role, 32, 32);
         game.debug.body(role);
     }
 
@@ -59,10 +58,12 @@ class Game {
 class Ground{
     constructor(){
         ground=game.add.tileSprite(0,300,game.world.width,100,'ground');
+        // game.physics.enable(ground, Phaser.Physics.ARCADE); //开启地面的物理系统
         game.physics.enable(ground, Phaser.Physics.ARCADE); //开启地面的物理系统
+        
         ground.body.immovable = true; //让地面在物理环境中固定不动
         ground.rotation=0.1;
-        ground.autoScroll(-100,0)
+        ground.autoScroll(-100,0);
         console.log(ground);
     }
 }
@@ -84,6 +85,7 @@ class Role {
         game.physics.enable(role, Phaser.Physics.ARCADE);
         // console.log(this.role)
         // this.role.body.velocity.x=10;
+        // role.body.velocity.x=10;
         role.body.setSize(0,0,100,330)
         role.body.gravity.y=100;
         role.rotation=0.1;
