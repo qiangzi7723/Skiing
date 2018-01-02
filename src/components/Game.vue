@@ -1,6 +1,9 @@
 <template>
     <section class='game-wrap'>
-        <div id='canvas'></div>
+        <div id='canvas'>
+            <i class='l'></i>
+            <i class='r'></i>
+        </div>
     </section>
 </template>
 
@@ -23,8 +26,21 @@
         #canvas {
             width: 100vw;
             height: 100vh;
-            canvas {
-            }
+            position: relative;
+        }
+        .l{
+            width: 50vw;
+            height: 100vh;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        .r{
+            width: 50vw;
+            height: 100vh;
+            position: absolute;
+            top: 0;
+            left: 50%;
         }
     }
 
